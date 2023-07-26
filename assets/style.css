@@ -1,0 +1,202 @@
+html {
+  scroll-behavior: smooth;
+  overflow: visible;
+  overflow-y: scroll;
+}
+
+.qrcode {
+  margin: 1rem;
+}
+
+body {
+  background-color: white !important;
+  overflow: visible;
+}
+
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: .25px;
+}
+
+.container {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
+.container>.btn {
+  margin-bottom: 1rem;
+}
+
+.brand {
+  font-size: 2rem;
+  color: #eb4034;
+  font-weight: 300;
+}
+
+.tagline {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+header a {
+  color: inherit;
+}
+
+header .home-link {
+  display: flex;
+  align-items: center;
+}
+header .home-link .brand {
+  margin-right: .5rem;
+}
+
+.table td.actions>* {
+  margin-right: .5rem;
+  color: var(--bs-primary);
+  cursor: pointer;
+}
+
+.table td.actions a:nth-child(1) {
+  color: var(--bs-danger);
+}
+.table td.actions a:nth-child(3) {
+  color: var(--bs-dark);
+}
+
+.table td.contacto span {
+  font-weight: 300;
+  color: #ddd;
+}
+
+.table td.numero-checkin>span {
+  font-weight: bold;
+  color: var(--bs-primary);
+  margin-right: .25rem;
+}
+
+.table td.numero-checkin>div {
+  display: inline-flex;
+}
+
+.table td.numero-checkin .dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  line-height: 1;
+  font-size: .9rem;
+  letter-spacing: 1px;
+  color: #444;
+}
+
+.table td.numero-checkin .dropdown-item a {
+  color: var(--bs-danger);
+}
+
+.table th {
+  font-size: .8rem;
+}
+
+.table th.contacto,
+.table td.contacto {
+  display: none;
+}
+
+form label {
+  cursor: pointer;
+}
+
+.checkin-data b {
+  color: var(--bs-primary);
+}
+
+.checkin-data span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@media all and (min-width: 576px) {
+  .checkin-data>div {
+    width: 450px;
+    max-width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+}
+
+.btn {
+  font-size: 0.9rem;
+}
+
+#reader {
+  width: 600px;
+  max-width: 100%;
+  margin: auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#spinner {
+  font-size: 1.5rem;
+    display: inline-block;
+    animation: spin 1s linear infinite;
+    opacity: 0.75;
+}
+
+.login {
+  background: radial-gradient(#fff, #eee 100%);
+  display: flex;
+  height: 98vh;
+}
+
+.login .container {
+  margin: auto auto;
+}
+
+.login form {
+  background-color: #fff;
+  border: solid 1px #ccc;
+  border-radius: .5rem;
+  padding: 2rem;
+}
+
+.login .brand {
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.login input,
+.login button {
+  font-size: 1.1rem;
+}
+
+@media all and (max-width: 768px) {
+  .table td.actions>* {
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+
+  .table td.numero-checkin>span {
+    margin-right: .1rem;
+  }
+
+  header .home-link {
+    flex-flow: column;
+    align-items: start;
+  }
+  header .home-link .brand {
+    margin-right: 0;
+  }
+
+}
