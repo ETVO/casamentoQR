@@ -49,6 +49,7 @@ header .home-link {
   display: flex;
   align-items: center;
 }
+
 header .home-link .brand {
   margin-right: .5rem;
 }
@@ -62,6 +63,7 @@ header .home-link .brand {
 .table td.actions a:nth-child(1) {
   color: var(--bs-danger);
 }
+
 .table td.actions a:nth-child(3) {
   color: var(--bs-dark);
 }
@@ -100,11 +102,6 @@ header .home-link .brand {
   font-size: .8rem;
 }
 
-.table th.contacto,
-.table td.contacto {
-  display: none;
-}
-
 form label {
   cursor: pointer;
 }
@@ -126,6 +123,13 @@ form label {
     flex-flow: column;
     justify-content: space-between;
   }
+
+  .table td:nth-child(1) {
+    width: 75px;
+  }
+  .table td:nth-child(6) {
+    width: 100px;
+  }
 }
 
 .btn {
@@ -139,19 +143,20 @@ form label {
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #spinner {
   font-size: 1.5rem;
-    display: inline-block;
-    animation: spin 1s linear infinite;
-    opacity: 0.75;
+  display: inline-block;
+  animation: spin 1s linear infinite;
+  opacity: 0.75;
 }
 
 .login {
@@ -181,6 +186,22 @@ form label {
   font-size: 1.1rem;
 }
 
+footer {
+  color: #888;
+}
+
+footer a {
+  transition: opacity .2s;
+}
+
+footer img {
+  height: 1rem;
+}
+
+footer a:hover {
+  opacity: .6;
+}
+
 @media all and (max-width: 768px) {
   .table td.actions>* {
     display: inline-block;
@@ -195,8 +216,13 @@ form label {
     flex-flow: column;
     align-items: start;
   }
+
   header .home-link .brand {
     margin-right: 0;
   }
 
+  .table th.contacto,
+  .table td.contacto {
+    display: none;
+  }
 }

@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $guests = json_encode($guests);
     
-    file_put_contents(BASE_DIR . '/guests.json', $guests);
+    file_put_contents(DATA_DIR . '/guests.json', $guests);
     
     $status = true;
     $message = 'Usuário editado com sucesso.';

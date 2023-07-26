@@ -7,6 +7,9 @@ if (isset($_GET['checkin'])) {
 
   $checkin_id = trim($_GET['checkin']);
 
+  if (!is_valid_md5($checkin_id))
+    $checkin_id = md5($checkin_id);
+
   $guests = get_data_from_dir(DATA_DIR . '/guests.json') ?? [];
 
   if (!$guest = get_guest_by_id($checkin_id, $guests)) {
@@ -50,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $checked_guests = json_encode($checked_guests);
 
-  file_put_contents(BASE_DIR . '/checkin.json', $checked_guests);
+  file_put_contents(DATA_DIR . '/checkin.json', $checked_guests);
 
   $status = true;
   $message = "Check-in realizado para $nome - $numero_checkin convidado(s).";

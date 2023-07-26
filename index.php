@@ -5,7 +5,7 @@ session_start();
 include 'const.php';
 include UTIL_DIR . '/util.php';
 
-if(!isset($_SESSION['user'])) {
+if (!isset($_SESSION['user'])) {
   header('Location: login.php');
 }
 
@@ -67,6 +67,12 @@ if(!isset($_SESSION['user'])) {
 
     ?>
   </div>
+  <footer class="py-3">
+    <div class="container">
+      <div>ETVO &copy; <?= date('Y'); ?></div>
+      <a href="https://etvo.me?ref=casamentoQR" target="_blank"><img src="/assets/etvo.svg" class="me-2" alt=""></a>
+    </div>
+  </footer>
 </body>
 
 </html>

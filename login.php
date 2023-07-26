@@ -14,8 +14,8 @@ if(isset($_SESSION['user'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $username = $_POST['username'];
-  $password = md5($_POST['password']);
+  $username = trim($_POST['username']);
+  $password = md5(trim($_POST['password']));
 
   switch ($username) {
     case 'admin':

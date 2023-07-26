@@ -16,8 +16,10 @@ $continue = true;
 
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
+
+  $guests = get_data_from_dir(DATA_DIR . '/guests.json') ?? [];
   
-  if (!$guest = get_guest_data($id)) {
+  if (!$guest = get_guest_by_id($id, $guests)) {
     $continue = false;
   } else {
     $nome = $guest['nome'];
@@ -49,5 +51,5 @@ $result = Builder::create()
 // Directly output the QR code
 $filename = str_replace(' ', '-', $nome) . '.png';
 header('Content-Disposition: attachment; filename="' . $filename . '"');
-header('Content-Type: ' . $result->getMimeType());
+header('Content-Type: image/png');
 echo $result->getString();

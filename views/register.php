@@ -1,6 +1,7 @@
 <?php
 $status = null;
 $message = '';
+$redirect = '/';
 
 // data received
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -19,22 +20,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if (guest_exists($id, $guests)) {
     $status = false;
-    $message = 'Já existe convidado com este nome.  Por favor utilize outro nome ou edite o registro já existente.';
+    $message = 'Já existe um convidado com este nome.  Por favor utilize outro nome ou edite o registo já existente.';
+    $redirect = false;
   } else {
     array_push($guests, $data);
 
     $guests = json_encode($guests);
 
-    file_put_contents(BASE_DIR . '/guests.json', $guests);
+    file_put_contents(DATA_DIR . '/guests.json', $guests);
 
+    $status = true;
+    $message = 'Convidado registado com sucesso.';
     $redirect = $stayonpage ? '?register' : '/';
-    header("Location: $redirect");
   }
 }
 
 if ($message != '') {
   $status_label = ($status) ? 'SUCESSO' : 'ERRO';
-  echo '<script>alert("' . $status_label . '\n' . $message . '");</script>';
+  echo '<script>alert("' . $status_label . '\n' . $message . '");';
+  echo ($redirect !== false)
+    ? 'window.location.href = "' . $redirect . '";</script>'
+    : '</script>';
 }
 
 ?>

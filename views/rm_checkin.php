@@ -26,7 +26,7 @@ if (isset($_GET['rm_checkin'])) {
 
     $checkin_guests = json_encode($checkin_guests);
 
-    file_put_contents(BASE_DIR . '/checkin.json', $checkin_guests);
+    file_put_contents(DATA_DIR . '/checkin.json', $checkin_guests);
     $status = true;
     $message = 'Check-in removido com sucesso.';
   } else {

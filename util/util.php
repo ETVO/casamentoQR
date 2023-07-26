@@ -9,6 +9,12 @@ function get_data_from_dir($dir)
     return json_decode($data_json, true);
 }
 
+function is_valid_md5($md5 ='')
+{
+    return preg_match('/^[a-f0-9]{32}$/', $md5);
+}
+
+
 function get_guest_data($id = null)
 {
     if (!$id)

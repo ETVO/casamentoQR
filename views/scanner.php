@@ -13,9 +13,6 @@
   }
 
   function onScanFailure(error) {
-    // handle scan failure, usually better to ignore and keep scanning.
-    // for example:
-    alert('Scan não encontrou código válido');
   }
 
   let html5QrcodeScanner = new Html5QrcodeScanner(
