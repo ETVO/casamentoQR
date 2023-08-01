@@ -89,7 +89,7 @@ if ($message != '') {
   </div>
   <div class="mb-3">
     <label for="numeroCheckin" class="form-label">Número de pessoas a entrar</label>
-    <input type="number" class="form-control" id="numeroCheckin" name="numeroCheckin" required value="<?= $numero ?? 1; ?>" aria-describedby="numeroHelp">
+    <input type="number" class="form-control" id="numeroCheckin" name="numeroCheckin" required min="1" value="<?= ($numero > 0) ? $numero : 1; ?>" aria-describedby="numeroHelp">
     <div id="numeroHelp" class="form-text">O número de convidados será somado cada vez que o código for utilizado.</div>
   </div>
   <div class="d-flex align-items-center">

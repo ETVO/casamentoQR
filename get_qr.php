@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include 'const.php';
 include UTIL_DIR . '/util.php';
@@ -13,6 +14,10 @@ use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
 use Endroid\QrCode\Writer\PngWriter;
 
 $continue = true;
+
+if (!isset($_SESSION['user'])) {
+  header('Location: login.php');
+}
 
 if (isset($_GET['id'])) {
   $id = $_GET['id'];

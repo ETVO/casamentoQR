@@ -17,11 +17,11 @@ if (!isset($_SESSION['user'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CasamentoQR</title>
+  <title>QRápido</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/style.css?v=0">
 
   <link rel="shortcut icon" href="/assets/favicon.svg" type="image/svg">
 
@@ -32,13 +32,16 @@ if (!isset($_SESSION['user'])) {
 <body>
   <header class="py-3 border-bottom">
     <div class="container d-flex align-items-center justify-content-between">
-      <a href="/" class="home-link d-flex">
+      <a href="/" class="home-link d-flex me-auto">
         <div class="brand fs-2 fw-light lh-1 me-0 me-md-1">
-          <span class="bi-person-lines-fill"></span> CasamentoQR
+          <span class="bi-person-lines-fill"></span> QRápido
         </div>
         <div class="tagline ms-0 ms-md-3 mt-0 mt-md-2">
-          Seu casamento mais fácil.
+          O jeito mais fácil de entrar na festa.
         </div>
+      </a>
+      <a href="?csv" class="me-3">
+        <span class="bi-database"></span>
       </a>
       <a href="login.php?logout">
         <span class="bi-box-arrow-right me-1"></span>
@@ -62,6 +65,10 @@ if (!isset($_SESSION['user'])) {
       $option = 'scanner';
     if (isset($_GET['rm_checkin']))
       $option = 'rm_checkin';
+    if (isset($_GET['csv']))
+      $option = 'csv';
+    if (isset($_GET['import_csv']))
+      $option = 'import_csv';
 
     include "views/$option.php";
 
@@ -70,7 +77,7 @@ if (!isset($_SESSION['user'])) {
   <footer class="py-3">
     <div class="container">
       <div>ETVO &copy; <?= date('Y'); ?></div>
-      <a href="https://etvo.me?ref=casamentoQR" target="_blank"><img src="/assets/etvo.svg" class="me-2" alt=""></a>
+      <a href="https://etvo.me?ref=qrapido" target="_blank"><img src="/assets/etvo.svg" class="me-2" alt=""></a>
     </div>
   </footer>
 </body>
